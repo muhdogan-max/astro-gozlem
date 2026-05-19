@@ -103,10 +103,10 @@ if "astro" in excel_yolu.name.lower() or "gozlem" in excel_yolu.name.lower():
 
         if "Ay Dogus" in df.columns:
             a1, a2, a3, a4 = st.columns(4)
-            a1.metric("Doğuş", son.get("Ay Dogus") or "—")
-            a2.metric("Transit", son.get("Ay Transit") or "—")
-            a3.metric("Batış", son.get("Ay Batis") or "—")
-            a4.metric("Yön", son.get("Ay Yon") or "—")
+            a1.markdown(f"**Doğuş**\n\n`{son.get('Ay Dogus') or '—'}`")
+            a2.markdown(f"**Transit**\n\n`{son.get('Ay Transit') or '—'}`")
+            a3.markdown(f"**Batış**\n\n`{son.get('Ay Batis') or '—'}`")
+            a4.markdown(f"**Yön**\n\n`{son.get('Ay Yon') or '—'}`")
 
     with col_sw:
         st.subheader("🌌 Samanyolu")
@@ -117,10 +117,10 @@ if "astro" in excel_yolu.name.lower() or "gozlem" in excel_yolu.name.lower():
 
         if "SW Dogus" in df.columns:
             s1, s2, s3, s4 = st.columns(4)
-            s1.metric("Doğuş",    son.get("SW Dogus")          or "—")
-            s2.metric("Transit",  son.get("SW Transit")         or "—")
-            s3.metric("Batış",    son.get("SW Batis")           or "—")
-            s4.metric("Yükseklik",f"{son.get('SW Maks Yukseklik','—')}°")
+            s1.markdown(f"**Doğuş**\n\n`{son.get('SW Dogus') or '—'}`")
+            s2.markdown(f"**Transit**\n\n`{son.get('SW Transit') or '—'}`")
+            s3.markdown(f"**Batış**\n\n`{son.get('SW Batis') or '—'}`")
+            s4.markdown(f"**Yükseklik**\n\n`{son.get('SW Maks Yukseklik','—')}°`")
             st.caption(f"Yön: {son.get('SW Yon','—')}")
 
     st.divider()
